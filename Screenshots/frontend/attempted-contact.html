@@ -1,0 +1,93 @@
+<form name="issuesCtrl.issueForm">
+    <div style="display: flex; justify-content: space-between">
+        <div>
+            <select style="width: 175px;" class="soflow" ng-change="issuesCtrl.updateTemplate()" ng-model="issuesCtrl.contact.channel">
+                <option selected="" value="">Select Method</option>
+                <option ng-if="issuesCtrl.isAdmin" ng-repeat="method in issuesCtrl.contactMethods | limitTo: 5" value="{{method.value}}">{{method.label}}</option>
+                <option ng-if="!issuesCtrl.isAdmin" ng-repeat="method in issuesCtrl.contactMethods | nonAdminContactMethods | limitTo: 5" value="{{method.value}}">{{method.label}}</option>
+            </select>
+        </div>
+        <div>
+            <select class="soflow"
+                ng-if="issuesCtrl.contact.channel === 'txt' && issuesCtrl.txtContacts.length > 0"
+                ng-change="issuesCtrl.updateTemplate()"
+                ng-init="issuesCtrl.contact.details = issuesCtrl.txtContacts[0]"
+                ng-model="issuesCtrl.contact.details"
+                ng-options="contact as contact.name + ': ' + contact.details for contact in issuesCtrl.txtContacts">
+            </select>
+
+            <select class="soflow"
+                ng-if="issuesCtrl.contact.channel === 'voice'"
+                ng-change="issuesCtrl.updateTemplate()"
+                ng-init="issuesCtrl.contact.details = issuesCtrl.voiceContacts[0]"
+                ng-model="issuesCtrl.contact.details"
+                ng-options="contact as contact.name + ': ' + contact.details for contact in issuesCtrl.voiceContacts">
+            </select>
+
+            <select class="soflow"
+                ng-if="issuesCtrl.contact.channel === 'email'"
+                ng-change="issuesCtrl.updateTemplate()"
+                ng-init="issuesCtrl.contact.details = issuesCtrl.emailContacts[0]"
+                ng-model="issuesCtrl.contact.details"
+                ng-options="contact as contact.name + ': ' + contact.details for contact in issuesCtrl.emailContacts">
+            </select>
+            <select class="soflow"
+                ng-if="issuesCtrl.contact.channel === 'email'"
+                ng-change="issuesCtrl.replyBody = templateSelector"
+                ng-init="issuesCtrl.contact.details = issuesCtrl.emailContacts[0]"
+                ng-model="templateSelector">
+                <option selected="selected" value="">Select Template</option>
+                <optgroup ng-repeat="issue in issuesCtrl.emailTemplateArray" ng-if="(issuesCtrl.topicMessage.category | categoryLabel) === issue.issueType"  label="{{issue.issueType}}">
+                        <option ng-repeat="reply in issue.replyTemplate" ng-value="'Hi '+ issuesCtrl.patient.user.name + '<br>' + reply.message" >{{reply.label}}</option>
+                </optgroup>
+                    
+            </select>
+
+
+            <select class="soflow"
+                ng-init="issuesCtrl.contact.details = issuesCtrl.webappContacts[0]"
+                ng-if="issuesCtrl.contact.channel === 'webapp'">
+                <option ng-model="issuesCtrl.contact.details">{{issuesCtrl.webappContacts[0].name}}</option>
+            </select>
+
+            <select class="soflow"
+                ng-change="issuesCtrl.updateTemplate()"
+                ng-init="issuesCtrl.contact.details = issuesCtrl.voiceContacts[0]"
+                ng-if="issuesCtrl.contact.channel === 'voicemail'"
+                ng-model="issuesCtrl.contact.details"
+                ng-options="contact as contact.name + ': ' + contact.details for contact in issuesCtrl.voiceContacts">
+            </select>
+
+            <select style="width: 175px;" ng-if="issuesCtrl.pharma" class="soflow" ng-change="issuesCtrl.updateTemplate()" ng-model="issuesCtrl.contactTemplate">
+                <option selected="" value="">Choose Template</option>
+                <option ng-repeat="template in issuesCtrl.contactTemplates | contactTemplates: issuesCtrl.topicMessage.category" value='{{template.value}}'>{{template.label}}</option>
+            </select>
+            </div>
+        </div>
+        <div>
+            <input ng-if="issuesCtrl.isAdmin" class="date-time" type='datetime-local' ng-model="issuesCtrl.replyBodyDate" />
+        </div>
+</div>
+    <div ng-if="issuesCtrl.contact.channel">
+        <text-angular
+         class="small-text-area"
+         style="font-size: 16px;"
+         ng-model="issuesCtrl.replyBody"
+         ta-toolbar="[['bold','italics', 'underline'],['ul'], ['insertLink']]"
+         placeholder="Type Here...">
+        </text-angular>
+        <!-- <textarea
+         class="small-text-area"
+         style="font-size: 16px;"
+         ng-if="issuesCtrl.contact.channel === 'txt'"
+         ng-model="issuesCtrl.replyBody">
+        </textarea> -->
+        <button name="statusChange" ng-disabled="!issuesCtrl.contact" class="btn-lg btn save-delete-button btn-primary" ng-click="issuesCtrl.postContact()">
+            <!-- <span ng-if="issuesCtrl.contact.channel === 'txt'">Send Text</span>
+            <span ng-if="issuesCtrl.contact.channel ==='voice'">Log as Phone Call</span>
+            <span ng-if="issuesCtrl.contact.channel ==='email'">Send Email</span> -->
+            <span>Send</span>
+        </button>
+    </div>
+    <span style="color: #009900; " ng-show="issuesCtrl.submitReplyMsg ">{{issuesCtrl.submitReplyMsg}}</span>
+</form>
