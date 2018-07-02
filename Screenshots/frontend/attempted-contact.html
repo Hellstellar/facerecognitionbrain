@@ -31,10 +31,10 @@
                 ng-model="issuesCtrl.contact.details"
                 ng-options="contact as contact.name + ': ' + contact.details for contact in issuesCtrl.emailContacts">
             </select>
+
             <select class="soflow"
                 ng-if="issuesCtrl.contact.channel === 'email'"
                 ng-change="issuesCtrl.replyBody = templateSelector"
-                ng-init="issuesCtrl.contact.details = issuesCtrl.emailContacts[0]"
                 ng-model="templateSelector">
                 <option selected="selected" value="">Select Template</option>
                 <optgroup ng-repeat="issue in issuesCtrl.emailTemplateArray" ng-if="(issuesCtrl.topicMessage.category | categoryLabel) === issue.issueType"  label="{{issue.issueType}}">

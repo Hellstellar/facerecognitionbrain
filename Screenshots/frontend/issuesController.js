@@ -103,7 +103,7 @@
     vm.templateLabel = {
       "Acknowledge" : 'We have received your question. Someone will reach out to you to discuss.',
 
-      "{Oral Bundle} Pick up ready" : " We will have your Oral Bundle ready for you to pick up.",
+      "{Oral Bundle} Pick up ready" : ' We will have your Oral Bundle ready for you to pick up.',
 
       "Other Drug Pick up ready" : 'We will have it ready for you to pick up.',
 

@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "react": "^16.4.1",
+    "react-anime": "^2.1.0",
     "react-dom": "^16.4.1",
+    "react-particles-js": "^2.2.0",
     "react-scripts": "1.1.4",
     "react-tilt": "^0.1.4",
     "semantic-ui-css": "^2.3.2",

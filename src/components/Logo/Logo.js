@@ -1,6 +1,5 @@
 import React from 'react'
 import Tilt from 'react-tilt'
-import 'tachyons'
 import Brain from './brain.ico'
 
 const Logo = () => {
