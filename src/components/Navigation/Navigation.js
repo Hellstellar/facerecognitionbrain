@@ -4,7 +4,7 @@ import { Button, Icon } from 'semantic-ui-react'
 const Navigation = () => {
     return (
       <div className = 'fr ma4'>
-            <Button inverted color='black' animated>
+        <Button color='red' animated>
 		      <Button.Content visible>SignOut</Button.Content>
 		      <Button.Content hidden>
 		        <Icon name='sign out alternate' />
