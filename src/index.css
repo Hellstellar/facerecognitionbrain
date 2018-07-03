@@ -12,6 +12,13 @@ body {
 	letter-spacing: 3px;
 }
 
+.center {
+	margin: 5px auto;
+}
+
+.img-input {
+	width: 35em;
+}
 
 .particles {
 	position: fixed;
