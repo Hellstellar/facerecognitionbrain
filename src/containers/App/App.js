@@ -5,7 +5,7 @@ import Navigation from '../../components/Navigation/Navigation'
 import Logo from '../../components/Logo/Logo'
 import Wrapper from '../../containers/Wrapper/Wrapper'
 import Particles from 'react-particles-js';
-import { Container } from "semantic-ui-react"
+import { Container, Grid } from "semantic-ui-react"
 
 const particleOptions = { 
   particles: {
@@ -32,9 +32,11 @@ class App extends Component {
           params={particleOptions}
         />
         <Navigation />
-        <Container textAlign='center'>
-          <Logo />
-          <Wrapper />
+        <Container>
+          <Grid>
+            <Logo />
+            <Wrapper />
+          </Grid>
         </Container>
       </div>
     );
