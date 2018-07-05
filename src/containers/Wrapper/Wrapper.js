@@ -38,7 +38,7 @@ class Wrapper extends Component {
 			topRow: clarifai_face.top_row * height,
 			leftCol: clarifai_face.left_col * width,
 			bottomRow: height - (clarifai_face.bottom_row * height),
-			rightCol: width - (clarifai_face.left_col * width),
+			rightCol: width - (clarifai_face.right_col * width),
 		}
 	}
 
@@ -54,6 +54,7 @@ class Wrapper extends Component {
 
 	onButtonClick = (event) => {
 		this.setState({imageUrl: this.state.input});
+		this.setState({input: ''})
 	    app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input).then(
 		    (res) => {
 		      this.displayFaceBox(this.calculateFaceBox(res));
@@ -67,7 +68,7 @@ class Wrapper extends Component {
 				  <Rank />
 				  <Transition visible={this.state.visible} animation='drop' duration={1500}>
 					  <Segment inverted color='red' circular textAlign='center'>
-			          	<ImageLink visible={this.state.visible} onInputChange = {this.onInputChange} onButtonClick={this.onButtonClick} />
+			          	<ImageLink value={this.state.input} visible={this.state.visible} onInputChange = {this.onInputChange} onButtonClick={this.onButtonClick} />
 			          </Segment>
 			      </Transition>
 		          <FaceRecognition box={this.state.box} imageUrl = {this.state.imageUrl} />
