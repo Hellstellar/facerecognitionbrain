@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import 'tachyons'
 import './App.css';
 import Navigation from '../../components/Navigation/Navigation'
 import Logo from '../../components/Logo/Logo'

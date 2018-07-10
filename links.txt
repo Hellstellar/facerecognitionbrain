@@ -2,3 +2,10 @@ https://jsreport.net/blog/pdf-reports-from-mongodb
 https://www.freetutorials.us/
 https://medium.freecodecamp.org/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2
 https://www.mongodb.com/blog/post/building-your-first-application-mongodb-creating-rest-api-using-mean-stack-part-1
+https://www.kirupa.com/react/creating_single_page_app_react_using_react_router.htm
+https://blog.sessionstack.com/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with-2f077c4438b5
+https://blog.sessionstack.com/how-javascript-works-memory-management-how-to-handle-4-common-memory-leaks-3f28b94cfbec
+https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e
+https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf
+https://www.djamware.com/post/5a90c37980aca7059c14297a/securing-mern-stack-web-application-using-passport
+https://www.youtube.com/watch?v=XRfD8xIOroA&t=1068s
