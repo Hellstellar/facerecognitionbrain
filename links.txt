@@ -1,1 +1,4 @@
 https://jsreport.net/blog/pdf-reports-from-mongodb
+https://www.freetutorials.us/
+https://medium.freecodecamp.org/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2
+https://www.mongodb.com/blog/post/building-your-first-application-mongodb-creating-rest-api-using-mean-stack-part-1
