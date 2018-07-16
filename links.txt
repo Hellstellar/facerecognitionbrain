@@ -9,3 +9,4 @@ https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-o
 https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf
 https://www.djamware.com/post/5a90c37980aca7059c14297a/securing-mern-stack-web-application-using-passport
 https://www.youtube.com/watch?v=XRfD8xIOroA&t=1068s
+https://codeburst.io/doing-without-databases-in-the-21st-century-6e25cf495373
